@@ -1,0 +1,7 @@
+- 제네릭 클래스는 타입 매개변수가 한개 이상 있는 클래스이다. 
+- 기본 타입으로는 타입 매개변수를 인스턴스화할 수 없다. 예를 들어 Entry<String, int>는 자바에서 쓸 수 없다. 
+- 제네릭 클래스의 객체를 생성할 때 생성자의 타입 매개변수를 생략 할수 있다. 
+  예를 들어 Entry<String, Integer> entry = new Entry<>("Fred", 42); 는 new Entry<String, Integer>("Fred",42)와 같다.
+- 제네릭 메서드를 선언할 때는 타입 매개변수를 제어자와 반환 타입 사이에 두어야 한다.
+  public static <T> void swap(T[] array, int i, int j)
+- 제네릭 클래스나 메서드가 받는 타입 파라미터를 제한하고 싶은 경우에 타입 경계를 사용
