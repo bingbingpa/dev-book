@@ -1,7 +1,5 @@
 package com.bingbingpa.ch03;
 
-import com.bingbingpa.ch02.Color;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
