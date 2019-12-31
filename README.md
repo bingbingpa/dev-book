@@ -1,7 +1,8 @@
 study-modern-java
 
-## ch03 람다 표현식
+## ch03 람다(lambda) 표현식
 
+- 람다 표현식은 메서드로 전달할 수 있는 익명 함수를 단순화한 것이라고 할 수 있다. 
 - 람다 표현식은 익명 함수의 일종이다. 이름은 없지만, 파라미터 리스트, 바디, 반환 형식을 가지며 예외를 던질 수 있다. 
 - 함수형 인터페이스는 하나의 추상 메서드만을 정의하는 인터페이스이다.
 - 재네릭 파라미터에는 참조형만 사용할 수 있다. 
@@ -15,7 +16,7 @@ study-modern-java
 - Collect : Collector를 매개변수로 하는 스트림의 최종 연산
 - Collector : collect에서 필요한 메서드를 정의해 놓은 인터페이스 
 - Collectors 클래스는 다양한 기능의 Collector를 구현한 클래스를 제공한다.
-	- 변환 : mappring(), toList(), toSet(), toMap(), toCollection(), .... 
+	- 변환 : mapping(), toList(), toSet(), toMap(), toCollection(), .... 
 	- 통계 : counting(), summingInt(), averagingInt(), maxBy(), minBy(), summarizingInt(), ...
 	- 문자열 결합 : joining()
 	- 리듀싱 - reducing()
