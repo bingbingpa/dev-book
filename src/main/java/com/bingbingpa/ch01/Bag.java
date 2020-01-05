@@ -5,10 +5,12 @@ public class Bag {
 	private Invitation invitation;
 	private Ticket ticket;
 	
+	// 현금만 있는 경우 
 	public Bag(long amount) {
 		this(null, amount);
 	}
 	
+	// 초대장과 현금이 있는 경우
 	public Bag(Invitation invitation, long amount) {
 		this.invitation = invitation;
 		this.amount = amount;
