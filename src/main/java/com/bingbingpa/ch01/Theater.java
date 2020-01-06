@@ -8,14 +8,7 @@ public class Theater {
     }
 
     public void enter(Audience audience) {
-        if (audience.getBag().hasInvitation()) {
-            Ticket ticket = ticketSeller.getTicketOffice().getTicket();
-            audience.getBag().setTicket(ticket);
-        } else {
-            Ticket ticket = ticketSeller.getTicketOffice().getTicket();
-            audience.getBag().minusAmount(ticket.getFee());
-            ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
-            audience.getBag().setTicket(ticket);
-        }
+    	// Theater클래스에서 너무 많은 일을 하므로 일부는 ticketSeller에서 처리하도록 수정
+        ticketSeller.sellTo(audience);
     }
 }
