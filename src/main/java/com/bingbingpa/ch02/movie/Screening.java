@@ -2,6 +2,8 @@ package com.bingbingpa.ch02.movie;
 
 import java.time.LocalDateTime;
 
+import com.bingbingpa.ch02.money.Money;
+
 public class Screening {
 	private Movie movie;
 	private int sequence;
@@ -23,5 +25,13 @@ public class Screening {
 	
 	public Money getMovieFee() {
 		return movie.getFee();
+	}		
+
+	public Reservation reserve(Customer customer, int audienceCount) {
+		return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+	}
+	
+	private Money calculateFee(int audienceCount) {
+		return movie.calculateMovieFee(this).times(audienceCount);
 	}
 }
