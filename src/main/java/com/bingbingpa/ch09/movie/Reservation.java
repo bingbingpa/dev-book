@@ -1,4 +1,4 @@
-package com.bingbingpa.ch09.movie.step01;
+package com.bingbingpa.ch09.movie;
 
 import com.bingbingpa.ch09.money.Money;
 

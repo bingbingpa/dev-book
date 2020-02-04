@@ -1,7 +1,7 @@
-package com.bingbingpa.ch09.movie.step01.pricing;
+package com.bingbingpa.ch09.movie.pricing;
 
-import com.bingbingpa.ch09.movie.step01.DiscountCondition;
-import com.bingbingpa.ch09.movie.step01.Screening;
+import com.bingbingpa.ch09.movie.DiscountCondition;
+import com.bingbingpa.ch09.movie.Screening;
 
 public class SequenceCondition implements DiscountCondition {
     private int sequence;
