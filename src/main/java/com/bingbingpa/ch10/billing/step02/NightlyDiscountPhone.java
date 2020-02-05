@@ -1,4 +1,4 @@
-package com.bingbingpa.ch10.billing.step01;
+package com.bingbingpa.ch10.billing.step02;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import com.bingbingpa.ch10.money.Money;
 
 /**
- * 단순 전화 요금 계산
+ * 세금을 적용한 통화 요금 계산
  * @author shpark
  *
  */
@@ -18,11 +18,13 @@ public class NightlyDiscountPhone {
     private Money regularAmount;
     private Duration seconds;
     private List<Call> calls = new ArrayList<>();
+    private double taxRate;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
+        this.taxRate = taxRate;
     }
 
     public Money calculateFee() {
@@ -36,6 +38,6 @@ public class NightlyDiscountPhone {
             }
         }
 
-        return result;
+        return result.minus(result.times(taxRate));
     }
 }
