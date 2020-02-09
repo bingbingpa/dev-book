@@ -4,30 +4,25 @@ import java.time.Duration;
 
 import com.bingbingpa.ch10.money.Money;
 
-public class NightlyDiscountPhone extends Phone {
+public class NightlyDiscountPhone extends AbstractPhone {
     private static final int LATE_NIGHT_HOUR = 22;
 
     private Money nightlyAmount;
+    private Money regularAmount;
+    private Duration seconds;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
-        super(regularAmount, seconds, taxRate);
+    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
+        this.regularAmount = regularAmount;
+        this.seconds = seconds;
     }
 
     @Override
-    public Money calculateFee() {
-        // 부모클래스의 calculateFee() 호출
-        Money result = super.calculateFee();
-
-        Money nightlyFee = Money.ZERO;
-        for(Call call : getCalls()) {
-            if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
-                nightlyFee = nightlyFee.plus(
-                        getAmount().minus(nightlyAmount).times(
-                                call.getDuration().getSeconds() / getSeconds().getSeconds()));
-            }
+    protected Money calculateCallFee(Call call) {
+        if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
+            return nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
+        } else {
+            return regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
         }
-        // 세금 계산하는 유사한 코드가 부모 클래스의 코드와 중복되서 사용된다.
-        return result.minus(nightlyFee.plus(nightlyFee.times(getTaxRate())));
     }
 }
