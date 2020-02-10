@@ -1,4 +1,4 @@
-package com.bingbingpa.ch11.billing;
+package com.bingbingpa.ch11.billing.step02;
 
 import java.time.Duration;
 

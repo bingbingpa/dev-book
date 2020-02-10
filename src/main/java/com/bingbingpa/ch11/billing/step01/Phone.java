@@ -1,4 +1,4 @@
-package com.bingbingpa.ch11.billing;
+package com.bingbingpa.ch11.billing.step01;
 
 import java.util.ArrayList;
 import java.util.List;
