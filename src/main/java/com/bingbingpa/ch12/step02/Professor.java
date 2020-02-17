@@ -1,4 +1,4 @@
-package com.bingbingpa.ch12.lecture.step02;
+package com.bingbingpa.ch12.step02;
 
 public class Professor {
     private String name;

@@ -1,4 +1,4 @@
-package com.bingbingpa.ch12.lecture.step02;
+package com.bingbingpa.ch12.step02;
 
 import java.util.ArrayList;
 import java.util.Collections;

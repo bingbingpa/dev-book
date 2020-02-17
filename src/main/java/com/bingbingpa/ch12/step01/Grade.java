@@ -1,4 +1,4 @@
-package com.bingbingpa.ch12.lecture.step02;
+package com.bingbingpa.ch12.step01;
 
 public class Grade {
     private String name;

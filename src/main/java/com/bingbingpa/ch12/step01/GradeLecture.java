@@ -1,4 +1,4 @@
-package com.bingbingpa.ch12.lecture.step02;
+package com.bingbingpa.ch12.step01;
 
 import java.util.List;
 import java.util.stream.Collectors;
