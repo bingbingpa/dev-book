@@ -16,3 +16,14 @@
 
 - git commit -m "first" 
 - git push -u origin master 
+
+### 3-tier Architecture
+
+- Presentation(Front-end) : 사용자와 소통하는 부분 
+- Business(Back-end) : 사용자와 소통한 결과. 사용자가 요청한 것을 처리하는 부분 
+  - Layered Architecture
+    - UI Layer 
+    - Application Layer
+    - Domain Layer
+    - Infrastructure Layer 
+- Data Source(Database) : 처리한 것들을 저장하는 곳 
