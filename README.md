@@ -1,4 +1,11 @@
 study-modern-java
+## ch02 동작 파라미터화 코드 전달하기 
+- **동작 파라미터화(behavior parameterization)** : 아직은 어떻게 실행할 것인지 결정하지 않은 코드 블룩을 의미한다. 즉 메서드가 다양한 동작을 받아서 내부적으로 다양한 동작을 수행 할 수 있다.
+- 파라미터로 메서드 참조를 넘길 수 있다 . Apple::test 같은 형태로(Apple 클래스의 test 함수를 파라미터로 사용)
+- 인터페이스를 구현한 클래스를 파라미터로 사용. ApplePredicate 인터페이스를 구현한 클래스를 new 형태로 해서 넘긴다.
+    - 예) List<Apple> greenApples = filter(inventory, new AppleColorPredicate());
+- 람다를 사용 할 수 있다. 
+    - 예) List<Apple> redApples = filter(inventory, (Apple apple) -> Color.RED.equals(apple.getColor()));
 
 ## ch03 람다(lambda) 표현식
 
