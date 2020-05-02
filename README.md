@@ -20,6 +20,8 @@ study-modern-java
 - @FunctionalInterface는 함수형 인터페이스임을 가르키는 어노테이션이다. @FunctionalInterface로 인터페이스를 선언했지만 실제로 함수형 인터페이스가 아니면 컴파일러가 에러를 발생시킨다.  
 - 함수형 인터페이스의 추상 메서드는 람다 표현식의 시그니처를 묘사하고 함수형 인터페이스의 추상 메서드 시그니처를 **함수 디스크립터(function descriptor)**라고 한다.
 
+## ch04 스트림 
+
 ## ch06 스트림으로 데이터 수집 
 
 - Collection : 데이터의 집합, 그룹을 의미하며 크게 List, Set, Queue 3가지 상위 인터페이스로 분류 할 수 있다. 그리고 여기에 Collection 인터페이스를 상속받고 있지 않지만 Map도 Collection으로 분류 된다.
