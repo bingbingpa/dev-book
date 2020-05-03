@@ -19,7 +19,12 @@ study-modern-java
 - 자바 컴파일러는 람다 표현식이 사용된 콘텍스트를 활용해서 람다의 파라미터 형식을 추론한다.
 - @FunctionalInterface는 함수형 인터페이스임을 가르키는 어노테이션이다. @FunctionalInterface로 인터페이스를 선언했지만 실제로 함수형 인터페이스가 아니면 컴파일러가 에러를 발생시킨다.  
 - 함수형 인터페이스의 추상 메서드는 람다 표현식의 시그니처를 묘사하고 함수형 인터페이스의 추상 메서드 시그니처를 **함수 디스크립터(function descriptor)**라고 한다.
-
+- 많은 디폴트 메서드가 있더라도 **추상 메서드가 오직 하나면** 함수형 인터페이스다.
+- 메서드 참조는 특정 람다 표현식을 축약한 것이라고 생각하면 된다. 
+    - 예) inventory.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())); 
+    - 메서드 참조로 변경 : inventory.sort(comparing(Apple::getWeight));
+    
+ 
 ## ch04 스트림 
 
 ## ch06 스트림으로 데이터 수집 
