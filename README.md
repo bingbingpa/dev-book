@@ -12,6 +12,7 @@ study-modern-java
 
 - 람다 표현식은 메서드로 전달할 수 있는 익명 함수를 단순화한 것이라고 할 수 있다. 
 - 람다 표현식은 익명 함수의 일종이다. 이름은 없지만, 파라미터 리스트, 바디, 반환 형식을 가지며 예외를 던질 수 있다. 
+- 함수형 인터페이스를 인수로 받는 메서드에만 람다 표현식을 사용할 수 있다.
 - 함수형 인터페이스는 하나의 추상 메서드만을 정의하는 인터페이스이다.
 - 재네릭 파라미터에는 참조형만 사용할 수 있다. 
 - 기본형을 참조형으로 변환하는 기능을 박싱. 참조형을 기본형으로 변한하는 반대 동작을 언박싱. 박싱과 언방식이 자동으로 이루어지는 오토박싱.
@@ -23,7 +24,15 @@ study-modern-java
 - 메서드 참조는 특정 람다 표현식을 축약한 것이라고 생각하면 된다. 
     - 예) inventory.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())); 
     - 메서드 참조로 변경 : inventory.sort(comparing(Apple::getWeight));
-    
+- Predicate 인터페이스는 복잡한 프레디케이트를 만들 수 있도록 negate(반전), and, or 세 가지 메서드를 제공한다. 
+- Function 인터페이스는 Function 인스턴스를 반환하는 andThen, compose 두 가지 디폴트 메서드를 제공한다. 
+    - andThen : 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달하는 함수를 반환한다.
+        - 예) Function<Integer, Integer> f = x -> x + 1;
+        - Function<Integer, Integer> g = x -> x * 2;
+        - Function<Integer, Integer> h = f.andThen(g); 
+        - int result = h.apply(1); (4를 반환)
+    - compose : 인수로 주어진 함수를 먼저 실행한 다음에 그 결과를 외부 함수의 인수로 제공한다. 
+        - 위 예제코드 결과에서 f.compose(g); 를 할경우 3을 반환 
  
 ## ch04 스트림 
 
