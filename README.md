@@ -65,7 +65,7 @@ study-modern-java
 	- 문자열 결합 : joining()
 	- 리듀싱 - reducing()
 	- 그룹화와 분할 : groupingBy(), partitioningBy(), collectingAndThen()
-	
+- **가변 컨테이너 관련 작업이면서 병렬성을 확보하려면 stream.reduce 보다 collect 메서드로 리듀싱 연산을 구현하는 것이 바람직하다.**
 - **collect와 reduce의 차이점** : collect 메서드는 도출하려는 결과를 누적하는 컨테이너를 바꾸도록 설계된 메서드인 반면 reduce는 두 값을 하나로 도출하는 불변형 연산이다. 가변 컨테이너 관련 작업이면서 병렬성을 확보하려면 collect 메서드로 리듀싱 연산을 구현하는 것이 바람직하다. 
  
  
