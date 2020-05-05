@@ -44,6 +44,17 @@ study-modern-java
 - 컬렉션은 현재 자료구조가 포함하는 모든 값을 메모리에 저장하는 자료구조다. 즉, 컬렉션의 모든 요소는 컬렉션에 추가하기 전에 계산되어야 한다. 
 - 스트림은 이론적으로 요청할 때만 요소를 계산하는 고정된 자료구조다. 
 
+## ch05 스트림 활용 
+- filter 메서드는 프레디케이트(불리언을 반환하는 함수)를 인수로 받아서 프레디케이트와 일치하는 모든 요소를 포함하는 스트림을 반환한다. 
+- distinct 메서드는 고유 요소로 이루어진 스트림을 반환하는데, 고유 여부는 스트림에서 만든 객체의 hashCode, equals 로 결정된다. 
+- 자바9에 추가된 takeWhile, dropWhile 
+    - takeWhile : 특정한 엘리먼트까지 왔다면 멈추고 그 엘리먼트까지 반환한다. 
+    - dropWhile : takeWhile 과 반대개념으로, 프레디케이트가 거짓이 되면 그 지점에서 작업을 중단하고 남은 모든 요소를 반환한다. 
+- skip : 처음 n개 요소를 제외한 스트림을 반환한다. 
+- flatMap : Array 나 Object 로 감싸져 있는 모든 원소를 단일 원소 스트림으로 반환해준다.
+- 검색과 매칭 API : allMatch, anyMatch, noneMatch, findFirst, findAny 
+- reduce : 모든 스트림 요소를 처리해서 값으로 도출한다. 
+
 ## ch06 스트림으로 데이터 수집 
 
 - Collection : 데이터의 집합, 그룹을 의미하며 크게 List, Set, Queue 3가지 상위 인터페이스로 분류 할 수 있다. 그리고 여기에 Collection 인터페이스를 상속받고 있지 않지만 Map도 Collection으로 분류 된다.
