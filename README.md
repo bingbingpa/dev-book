@@ -58,6 +58,7 @@ study-modern-java
 ## ch06 스트림으로 데이터 수집 
 
 - Collection : 데이터의 집합, 그룹을 의미하며 크게 List, Set, Queue 3가지 상위 인터페이스로 분류 할 수 있다. 그리고 여기에 Collection 인터페이스를 상속받고 있지 않지만 Map도 Collection으로 분류 된다.
+- collect() : Collector 를 매개변수로 하는 스트림의 최종연
 - Collector : collect에서 필요한 메서드를 정의해 놓은 인터페이스 
 - Collectors 클래스는 다양한 기능의 Collector를 구현한 클래스를 제공한다.
 	- 변환 : mapping(), toList(), toSet(), toMap(), toCollection(), .... 
@@ -66,6 +67,10 @@ study-modern-java
 	- 리듀싱 - reducing()
 	- 그룹화와 분할 : groupingBy(), partitioningBy(), collectingAndThen()
 - **가변 컨테이너 관련 작업이면서 병렬성을 확보하려면 stream.reduce 보다 collect 메서드로 리듀싱 연산을 구현하는 것이 바람직하다.**
-- **collect와 reduce의 차이점** : collect 메서드는 도출하려는 결과를 누적하는 컨테이너를 바꾸도록 설계된 메서드인 반면 reduce는 두 값을 하나로 도출하는 불변형 연산이다. 가변 컨테이너 관련 작업이면서 병렬성을 확보하려면 collect 메서드로 리듀싱 연산을 구현하는 것이 바람직하다. 
- 
+- **collect와 reduce의 차이점** : collect 메서드는 도출하려는 결과를 누적하는 컨테이너를 바꾸도록 설계된 메서드인 반면 reduce는 두 값을 하나로 도출하는 불산변형 연산이다. 가변 컨테이너 관련 작업이면서 병렬성을 확보하려면 collect 메서드로 리듀싱 연산을 구현하는 것이 바람직하다.
+- 그룹화 
+    - 그룹화 함수가 반환하는 키 그리고 각 키에 대응하는 스트림의 모든 항목 리스트를 값으로 갖는 맵이 반환된다. 
+    - 일반적인 분류 함수와 컬렉터를 인수로 받는다. 
+        - 예) Map<Dish.Tpye, List<Dish>> caloricDishesByType = menu.stream().collect(groupingBy(**Dish::getType**, **filtering(dish -> dish.getCalories() > 500, toList())**));
+    - collectingAndThen : 적용할 컬렉터와 변환 함수를 인수로 받아 다른 컬렉터를 반환한다.
  
