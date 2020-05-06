@@ -58,8 +58,8 @@ study-modern-java
 ## ch06 스트림으로 데이터 수집 
 
 - Collection : 데이터의 집합, 그룹을 의미하며 크게 List, Set, Queue 3가지 상위 인터페이스로 분류 할 수 있다. 그리고 여기에 Collection 인터페이스를 상속받고 있지 않지만 Map도 Collection으로 분류 된다.
-- collect() : Collector 를 매개변수로 하는 스트림의 최종연
-- Collector : collect에서 필요한 메서드를 정의해 놓은 인터페이스 
+- collect() : Collector 를 매개변수로 하는 스트림의 최종연산
+- Collector : collect()에서 필요한 메서드를 정의해 놓은 인터페이스 
 - Collectors 클래스는 다양한 기능의 Collector를 구현한 클래스를 제공한다.
 	- 변환 : mapping(), toList(), toSet(), toMap(), toCollection(), .... 
 	- 통계 : counting(), summingInt(), averagingInt(), maxBy(), minBy(), summarizingInt(), ...
@@ -73,4 +73,12 @@ study-modern-java
     - 일반적인 분류 함수와 컬렉터를 인수로 받는다. 
         - 예) Map<Dish.Tpye, List<Dish>> caloricDishesByType = menu.stream().collect(groupingBy(**Dish::getType**, **filtering(dish -> dish.getCalories() > 500, toList())**));
     - collectingAndThen : 적용할 컬렉터와 변환 함수를 인수로 받아 다른 컬렉터를 반환한다.
+- 분할 
+    - partitioningBy : Boolean 형태의 맵 키에 해당하는 리스트를 리턴한다. 
+- Collector 인터페이스에 정의된 메서드를 구현해서 커스텀 컬렉션을 개발 할 수 있다.
+    - supplier 메서드 : 새로운 결과 컨테이너 만들기
+    - accumulator 메서드 : 결과 컨테이너에 요소 추가하기
+    - finisher 메서드 : 최종 변환값을 결과 컨테이너로 적용하기
+    - combiner 메서드 : 두 결과 컨테이너 병합
+    - characteristics 메서드 : 리듀싱 연산을 돕는 힌트 특성 집합 제공 
  
