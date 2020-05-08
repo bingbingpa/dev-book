@@ -20,7 +20,7 @@ public class Reducing {
         return menu.stream().collect(reducing(0, Dish::getCalories, Integer::sum));
     }
 
-    private  static int calculateTotalCaloriesWithoutCollectors() {
+    private static int calculateTotalCaloriesWithoutCollectors() {
         return menu.stream().map(Dish::getCalories).reduce(Integer::sum).get();
     }
 
