@@ -14,12 +14,12 @@ public class ToListCollector<T> implements Collector<T, List<T>, List<T>> {
 
     @Override
     public Supplier<List<T>> supplier() {
-        return () -> new ArrayList<T>();
+        return ArrayList::new;
     }
 
     @Override
     public BiConsumer<List<T>, T> accumulator() {
-        return (list, item) -> list.add(item);
+        return List::add;
     }
 
     @Override
