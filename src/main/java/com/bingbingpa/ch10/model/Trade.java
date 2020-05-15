@@ -2,11 +2,6 @@ package com.bingbingpa.ch10.model;
 
 public class Trade {
 
-    public enum Type {
-        BUY,
-        SELL
-    }
-
     private Type type;
     private Stock stock;
     private int quantity;
@@ -51,6 +46,11 @@ public class Trade {
     @Override
     public String toString() {
         return String.format("Trade[type=%s, stock=%s, quantity=%d, price=%.2f]", type, stock, quantity, price);
+    }
+
+    public enum Type {
+        BUY,
+        SELL
     }
 
 }
