@@ -116,3 +116,16 @@ study-modern-java
 - 내부 DSL : 순수 자바 코드같은 기존 호스팅 언어를 기반으로 구현한다. 
 - 외부 DSL : 호스팅 언어와는 독립적으로 자체의 문법을 가진다. 
 
+## 11 null 대신 Optional 클래스 
+
+- null 을 참조하려 하면 NullPointerException 이 발생하지만 Optional.empty() 는 Optional 객체이므로 발생하지 않는다. 
+- Optional 팩토리 메서드 
+    - Optional.empty : 빈 Optional 객체 생성
+    - Optional.of : null 이 아닌 값을 포함 하는 Optional 생성
+    - Optional.ofNullable : null 값을 저장 할 수 있는 Optional 을 생성
+- get : 값을 읽는 가장 간단한 메서드면서 동시에 가장 안전하지 않은 메서드다. 
+- orElse : Optional 이 값을 포함하지 않을 때 기본값을 제공할 수 있다. 
+- orElseThrow : Optional 이 비었을 때 예외를 발생시킨다. 
+- ifPresent : 값이 존재할 때 인수로 넘겨준 동작을 실행할 수 있다. 값이 없으면 아무 일도 일어나지 않는다. 
+- ifPresentOrElse(java9) : Optional 이 비었을 때 실행할 수 있는 Runnable 을 인수로 받는다는 점만 ifPresent 와 다르다.  
+- 기본형 Optional(OptionalInt, OptionalLong, OptionalDouble 등) 은 가급적 사용 하지 않도록 한다.
