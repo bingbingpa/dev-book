@@ -129,3 +129,9 @@ study-modern-java
 - ifPresent : 값이 존재할 때 인수로 넘겨준 동작을 실행할 수 있다. 값이 없으면 아무 일도 일어나지 않는다. 
 - ifPresentOrElse(java9) : Optional 이 비었을 때 실행할 수 있는 Runnable 을 인수로 받는다는 점만 ifPresent 와 다르다.  
 - 기본형 Optional(OptionalInt, OptionalLong, OptionalDouble 등) 은 가급적 사용 하지 않도록 한다.
+
+## 12 새로운 날짜와 시간 API
+
+- LocalDate : 시간을 제외한 날짜를 표현 하는 불변 객체.
+- LocalDateTime : 날짜와 시간을 모두 표현 할 수 있다.
+- Instant : 유닉스 에포크 시간(1970년 1월 1일 0시 0분 0초 UTC)을 기준으로 특정 지점까지의 시간을 초로 표현
