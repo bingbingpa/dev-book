@@ -165,3 +165,21 @@ study-modern-java
 - CompletableFuture 클래스는 한 번의 비동기 연산을 표현한다. 콤비네이터로 비동기 연산을 조합함으로 Future 를 이용할 때 발생했던 기존의 블로킹 문제를 해결 할 수 있다.
 
 ## ch16 CompletableFuture: 안정적 비동기 프로그래밍 
+
+- Future : 비동기 계산을 모델링 하는데 사용 한다.
+- Future 를 활용 할 때는 get 메서드를 오버로드해서 우리 스레드가 대기할 최대 타임아웃 시간을 설정하는 것이 좋다.
+- CompletableFuture : Future 인터페이스를 구현한 클래스로 Stream 과 비슷한 패턴, 즉 람다 표현식과 파이프라이닝을 활용한다.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
