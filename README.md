@@ -168,7 +168,24 @@ study-modern-java
 
 - Future : 비동기 계산을 모델링 하는데 사용 한다.
 - Future 를 활용 할 때는 get 메서드를 오버로드해서 우리 스레드가 대기할 최대 타임아웃 시간을 설정하는 것이 좋다.
-- CompletableFuture : Future 인터페이스를 구현한 클래스로 Stream 과 비슷한 패턴, 즉 람다 표현식과 파이프라이닝을 활용한다.  
+- 블록 문제가 발생할 수 있는 상황에서는 타임아웃을 활용하는 것이 좋다.
+- CompletableFuture : Future 인터페이스를 구현한 클래스로 Stream 과 비슷한 패턴, 즉 람다 표현식과 파이프라이닝을 활용한다.
+    - supplyAsync : Supplier 를 인수로 받아서 CompletetableFuture 를 반환 한다. 
+    - thenCompose : 첫 번째 연산의 결과를 두 번째 연산으로 전달한다.
+    - thenCombine : CompletableFuture 를 합친다.
+    - orTimeout(자바9) : 타임아웃 설정 
+    - completeOnTimeout(자바9) : 정해진 시간동안 응답이 없을 경우 기본 값을 반환한다. 
+- 스레드 풀 크기 조절 : N(threads) = N(cpu) * U(cpu) * (1 + W/C)
+    - N(cpu) : Runtime.getRuntime().availableProcessors() 가 반환하는 코어 수 (jshell 에서 확인 가능)
+    - U(cp) 는 0 과 1 사이의 값을 갖는 CPU 활용 비율 
+    - W/C 는 대기시간과 계산시간의 비율 
+- **데몬 스레드** : 자바에서 일반 스레드가 실행 중이면 자바 프로그램은 종료되지 않는다. 따라서 어떤 이벤트를 한없이 기다리면서 종료되지 않는 일반 스레드가 있으면 문제가 될 수 있다. 
+반면 데몬 스레드는 자바 프로그램이 종료될 때 강제로 실행이 종료될 수 있다.
+- **애플리케이션의 특성에 맞는 Executor 를 만들어 CompletableFuture 를 활용하는 것이 바람직하다.** 
+- I/O 가 포함되지 않는 계산 중심의 동작을 실행할 때는 스트림 인터페이스(parallelStream)가 가장 구현하기 쉽고 효율적수 있고, I/O 를 기다리는 작업을 병렬로 실행할 때는 CompletableFuture 가 더 많은 유연성
+을 제공하고 효율적이다. 
+-  
+
 
 
 
