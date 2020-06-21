@@ -14,8 +14,8 @@ public class Util {
     private static final DecimalFormat formatter = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.US));
 
     public static void delay() {
-        int delay = 1000;
-        //int delay = 500 + RANDOM.nextInt(2000);
+//        int delay = 1000;
+        int delay = 500 + RANDOM.nextInt(2000);
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
@@ -40,7 +40,7 @@ public class Util {
     );
 */
         return CompletableFuture.supplyAsync(() -> futures.stream()
-                .map(future -> future.join())
+                .map(CompletableFuture::join)
                 .collect(Collectors.<T>toList()));
     }
 
