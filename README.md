@@ -27,3 +27,10 @@
     - Domain Layer
     - Infrastructure Layer 
 - Data Source(Database) : 처리한 것들을 저장하는 곳 
+
+### SOLID 
+  - SRP : 단일 책임 원칙(Single Responsibility Principle)
+  - OCP : 개방/폐쇄원칙(Open/Close Principle)
+  - LCP : 리스코프 대체 원칙(Liskov Substitution Principle)
+  - ISP : 인터페이스 분리 원칙(Interface Segregation Principle)
+  - DIP : 의존성 반전 원칙(Dependency Inversion Principle)
