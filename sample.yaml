@@ -1,0 +1,24 @@
+openapi: "3.0.0"
+info:
+  title: 쇼핑 API
+  version: "1.0"
+paths:
+  /products: # 리소스
+    description: 상품 카탈로그
+    get: # 액션의 HTTP 메서드
+      summary: 상품 조회 # 액션의 짧은 설명
+      description: |
+        카탈로그에서 비정형 질의 파라미터로
+        조회한 상품들
+      responses: # 액션 리스폰스 리스트
+        "200": # 200 OK HTTP 상태 리스폰스
+          description: |
+            비정형 질의에 일치하는 상품들
+    post:
+      summary: 상품 추가
+      description: |
+        상품 정보 파라미터에 해당하는
+        상품을 카탈로그에 추가
+      responses:
+      "200":
+        description: 카탈로그에 상품이 추가됨

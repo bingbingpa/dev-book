@@ -35,3 +35,35 @@
                     /products: # 리소스의 경로
                         description: 상품 카탈로그 # 리소스의 설명
             ~~~ 
+    - 리소스의 동작 설명
+        - summary 속성은 액션에 대한 짧은 설명이며, 구체적인 사항은 없다.
+        - YAML 에서 string 속성을 여러행으로 작성 할 때 반드시 **파이프(|)** 문자로 시작해야 한다.
+        - OAS 문서에서 동작은 반드시 적어도 하나의 response 속성을 가지고 있어야 한다.
+        - 예시)
+            ~~~ oas
+                openapi: "3.0.0"
+                info:
+                    title: 쇼핑 API
+                    version: "1.0"
+                paths:
+                    /products: # 리소스
+                        description: 상품 카탈로그
+                        get: # 액션의 HTTP 메서드
+                            summary: 상품 조회 # 액션의 짧은 설명
+                            description: |
+                                카탈로그에서 비정형 질의 파라미터로 
+                                조회한 상품들
+                            responses: # 액션 리스폰스 리스트
+                                "200": # 200 OK HTTP 상태 리스폰스
+                                    description: |
+                                        비정형 질의에 일치하는 상품들
+                        post:
+                            summary: 상품 추가
+                            description: |
+                                상품 정보 파라미터에 해당하는
+                                상품을 카탈로그에 추가
+                            responses:
+                            "200":
+                                description: 카탈로그에 상품이 추가됨
+            ~~~
+    #### 4.3 OpenAPI 와 JSON Schema 로 API 데이터 표현하기
