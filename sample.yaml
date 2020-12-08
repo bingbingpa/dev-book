@@ -20,5 +20,5 @@ paths:
         상품 정보 파라미터에 해당하는
         상품을 카탈로그에 추가
       responses:
-      "200":
-        description: 카탈로그에 상품이 추가됨
+        200:
+          description: 카탈로그에 상품이 추가됨
