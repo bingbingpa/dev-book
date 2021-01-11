@@ -16,24 +16,24 @@
         - 명세의 버전과 API 버전의 숫자는 반드시 큰따옴표로 둘러 싸야 한다. 
         - 예시)
             ~~~ oas
-                openapi : "3.0.0"  # OAS 버전
-                info: # API 일반 정보
-                    title: Shopping API
-                    version: "1.0"
-                paths: {} # 빈 경로
+            openapi : "3.0.0"  # OAS 버전
+            info: # API 일반 정보
+                title: Shopping API
+                version: "1.0"
+            paths: {} # 빈 경로
             ~~~
     - 리소스 설명 
         - description 이 필수는 아니다. 하지만 API 리소스에 대한 설명을 제공하면 API 의 전체 수명주기동안 유용하게 쓰일 수 있다.
         - **OAS 문서에서 설명하는 리소스는 반드시 동작을 포함하고 있어야 한다.** 그렇지 않다면 문서는 유효하지 않다.
         - 예시)
             ~~~ oas
-                openapi : "3.0.0"  
-                info: 
-                    title: Shopping API
-                    version: "1.0"
-                paths: # API 의 리소스
-                    /products: # 리소스의 경로
-                        description: 상품 카탈로그 # 리소스의 설명
+            openapi : "3.0.0"  
+            info: 
+                title: Shopping API
+                version: "1.0"
+            paths: # API 의 리소스
+                /products: # 리소스의 경로
+                    description: 상품 카탈로그 # 리소스의 설명
             ~~~ 
     - 리소스의 동작 설명
         - summary 속성은 액션에 대한 짧은 설명이며, 구체적인 사항은 없다.
@@ -41,29 +41,29 @@
         - OAS 문서에서 동작은 반드시 적어도 하나의 response 속성을 가지고 있어야 한다.
         - 예시)
             ~~~ oas
-                openapi: "3.0.0"
-                info:
-                    title: 쇼핑 API
-                    version: "1.0"
-                paths:
-                    /products: # 리소스
-                        description: 상품 카탈로그
-                        get: # 액션의 HTTP 메서드
-                            summary: 상품 조회 # 액션의 짧은 설명
-                            description: |
-                                카탈로그에서 비정형 질의 파라미터로 
-                                조회한 상품들
-                            responses: # 액션 리스폰스 리스트
-                                "200": # 200 OK HTTP 상태 리스폰스
-                                    description: |
-                                        비정형 질의에 일치하는 상품들
-                        post:
-                            summary: 상품 추가
-                            description: |
-                                상품 정보 파라미터에 해당하는
-                                상품을 카탈로그에 추가
-                            responses:
-                            "200":
-                                description: 카탈로그에 상품이 추가됨
+            openapi: "3.0.0"
+            info:
+                title: 쇼핑 API
+                version: "1.0"
+            paths:
+                /products: # 리소스
+                    description: 상품 카탈로그
+                    get: # 액션의 HTTP 메서드
+                        summary: 상품 조회 # 액션의 짧은 설명
+                        description: |
+                            카탈로그에서 비정형 질의 파라미터로 
+                            조회한 상품들
+                        responses: # 액션 리스폰스 리스트
+                            "200": # 200 OK HTTP 상태 리스폰스
+                                description: |
+                                    비정형 질의에 일치하는 상품들
+                    post:
+                        summary: 상품 추가
+                        description: |
+                            상품 정보 파라미터에 해당하는
+                            상품을 카탈로그에 추가
+                        responses:
+                        "200":
+                            description: 카탈로그에 상품이 추가됨
             ~~~
     #### 4.3 OpenAPI 와 JSON Schema 로 API 데이터 표현하기
