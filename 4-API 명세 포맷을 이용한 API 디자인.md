@@ -63,7 +63,177 @@
                             상품 정보 파라미터에 해당하는
                             상품을 카탈로그에 추가
                         responses:
-                        "200":
+                            "200":
                             description: 카탈로그에 상품이 추가됨
             ~~~
     #### 4.3 OpenAPI 와 JSON Schema 로 API 데이터 표현하기
+    - OAS 는 JSON Schema 사양을 기반으로 모든 데이터를 표현한다.
+    - 쿼리 파라미터 묘사
+      - parameters 속성은 리스트이거나 배열이며, YAML 에서는 배열이나 리스트에 속하는 개별 원소들은 대시(-)로 시작한다.
+        - name: 실제 경로상(products?free-query={free query})에서 보이는 파라미터의 이름
+        - in: 파라미터가 어디에 위치하는지를 의미한다. 이번의 경우에는, query 파라미터임을 나타내고, 이는 경로의 맨 뒤에 ?(물음표) 다음에 위치한다는 의미이다.
+        ~~~ oas
+        openapi: "3.0.0"
+            info:
+                title: 쇼핑 API
+                version: "1.0"
+            paths:
+                /products: # 리소스
+                    get: # 액션의 HTTP 메서드
+                        summary: 상품 조회 # 액션의 짧은 설명
+                        description: |
+                            카탈로그에서 비정형 질의 파라미터로 
+                            조회한 상품들
+                        parameters:
+                        - name: free-query # 파라미터 이름
+                          description: | # 파라미터 설명 
+                            상품의 이름(name), 참조값(reference), 또는 상품 설명의 일부(partial description)
+                          in: query # 파라미터의 위치
+                          required: false # 파라미터의 필수여부
+                          schema: # 파라미터의 데이터 구조 설명
+                            type: string # 파라미터의 타입(string)
+                        responses:
+                            "200":
+                            description: |
+                                비정형 질의 파라미터에 부합하는 상품들
+        ~~~
+    - JSON Schema 를 통한 데이터 묘사
+      - properties: 프로퍼티들에 대해 기술
+      - required : 필수인 속성
+      ~~~ oas
+      type: object
+      description: A product
+      required: # 필수인 속성들
+        - reference
+        - name
+        - price
+        - supplier
+      properties: # 프로퍼티들에 대한 설명
+        reference:
+            type: string
+            description: Product`s unique identifier
+            example: ISBN-92930293
+        name:
+            ...
+        price:
+            ...
+        description:
+            ...
+        supplier: # 프로퍼티 중에서 오브젝트 타입에 대한 설명
+            type: object
+            description: Product`s supplier
+            required:
+                - deference
+                - name
+            properties:
+                reference:
+                    ...
+      ~~~
+    - 리스폰스 묘사
+      - content: 리스폰스 바디의 미디어 타입
+      - schema: 리스폰스 바디의 JSON 스키마
+      - type: 리스폰스 바디의 타입
+      - items: 리스폰스 바디 타입의 아이템 Schema
+      ~~~ oas
+      responses:
+          "200":
+          description: |
+              비정형 질의 파라미터에 부합하는 상품들
+          content: # 리스폰스 바디의 정의
+              application/json: # 리스폰스 바디의 미디어 타입
+                  schema: 리스폰스 바디의 JSON 스키마
+                      type: array # 리스폰스 타입은 배열이다
+                      description: 상품의 배열 
+                      required:
+                          - reference
+                          - name
+                          - price
+                          - supplier
+                      properties:
+                          reference:
+                              description: 상품을 식별하는 고유 ID
+                              type: string
+                          name:
+                              ...
+                          ...
+      ~~~
+    - 바디 파라미터 묘사
+      ~~~ oas
+      requestBody:
+        description: 상품의 정보
+        content:
+            applictaion/json:
+                schema: # 바디 파라미터의 스키마
+                    required:
+                        - name
+                        - price
+                        - supplierReference
+                    properties:
+                        name:
+                            type: string
+                        price:
+                            type: number
+                        description:
+                            type: string
+                        supplierReference:
+                            type: string
+      ~~~
+    - OAS 에서 API 를 효율적으로 묘사하기
+      - 컴포넌트 재사용하기
+        - 스키마, 파라미터, 리스폰스등을 재사용 할 수 있고, **$ref** 속성으로 사전에 정의된 스키마의 경로를 적어주면 된다.
+        ~~~ oas
+        openapi: "3.0.0"
+        [...]
+        components: # 재사용 가능한 컴포넌트
+            schemas: # 재사용 가능한 스키마
+                product: # 재사용 가능한 스키마의 이름
+                    type: object
+                    description: 상품
+                    required:
+                    [...]
+        paths:
+            /products: 
+                post:
+                    summary: 상품 추가
+                    description: 상품을 카탈로그에 추가한다.
+                    responses:
+                        "200":
+                        description: 카탈로그에 상품이 추가됨
+                        content:
+                            application/json:
+                                schema: 
+                                    $ref: "#/components/schemas/product" # 사전에 정의된 스키마를 참조
+    
+        ~~~
+      - 패스 파라미터(Path Parameter) 묘사하기
+        - /products/{productId} 경로에서 productId 를 변수로 취급하는데 이를 **패스 파라미터**라고 한다. 
+        ~~~ oas
+        paths:
+            /products:
+            [...]
+            /products/{productId}: # 상품 리소스와 파라미터
+                description: 상품
+                delete: # 상품 삭제 액션
+                    summary: 상품 삭제
+                    prametes: # 상품 삭제 액션의 파라미터들
+                        - name: productId # 패스 파라미터의 이름
+                          in: path # 파라미터의 위 치
+                          required: true # 파라미터의 필수 여부
+                          description: 상품의 식별자
+                          schema:
+                            type: string
+        ~~~
+        - 패스파라미터 역시 컴포넌트로 재사용 가능하다.
+        ~~~ oas조
+        components:
+            prameters:
+                productId:
+                    [...] # 패스 파라미터 정의
+        paths:
+            /products:
+            [...]
+            /products/{productId}: # 상품 리소스의 경로와 패스 파라미터
+            /delete:
+                parameters:
+                    - $ref: #/compotents/parameters/productId # 사전 정의된 파라미터 참
+        ~~~
