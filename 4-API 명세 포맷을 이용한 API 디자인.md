@@ -224,7 +224,7 @@
                             type: string
         ~~~
         - 패스파라미터 역시 컴포넌트로 재사용 가능하다.
-        ~~~ oas조
+        ~~~ oas
         components:
             prameters:
                 productId:
@@ -235,5 +235,5 @@
             /products/{productId}: # 상품 리소스의 경로와 패스 파라미터
             /delete:
                 parameters:
-                    - $ref: #/compotents/parameters/productId # 사전 정의된 파라미터 참
+                    - $ref: #/compotents/parameters/productId # 사전 정의된 파라미터 참조
         ~~~
