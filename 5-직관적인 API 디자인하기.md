@@ -49,7 +49,7 @@
                 "type": 2,
                 "typeName": "checking", //데이터를 추가하여 type 이란 의미를 알수 없는 데이터를 설명
                 "balance": 500,
-                ""currency": "USD", //컨슈머가 추가적인 작업을 할 필요가 없도록 부가적인 데이터도 제공
+                "currency": "USD", //컨슈머가 추가적인 작업을 할 필요가 없도록 부가적인 데이터도 제공
                 "overdraftLimit": 100,
                 "safeToSpend":600,
                 "creationDate": "2015-02-07"
