@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
     implementation 'mysql:mysql-connector-java:8.0.23'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
