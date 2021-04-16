@@ -1,4 +1,4 @@
-package com.bingbingpa;
+package me.bingbingpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
