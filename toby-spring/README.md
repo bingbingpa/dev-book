@@ -1,4 +1,4 @@
-# study toby spring
+# 토비의 스프링
 - *이일민 저 | 에이콘출판사*
 <br>
 <br>
