@@ -1,7 +1,7 @@
 # 개발 도서 정리
 
 - [1만 시간의 재발견](./1만%20시간의%20재발견/README.md)
-- [Centos 리눅스](./centos%20리눅스/README.md)
+- [centos 리눅스](./centos%20리눅스/README.md)
 - [core-java9](./core-java9/README.md)
 - [modern-java-in-action](./modern-java-in-action/README.md)
 - [object](./object/README.md)
