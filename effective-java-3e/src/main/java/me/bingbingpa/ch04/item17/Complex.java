@@ -1,4 +1,4 @@
-package me.bingbingpa.ch03.item17;
+package me.bingbingpa.ch04.item17;
 
 public class Complex {
     private final double re;

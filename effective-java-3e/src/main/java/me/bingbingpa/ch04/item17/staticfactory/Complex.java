@@ -1,4 +1,4 @@
-package me.bingbingpa.ch03.item17.staticfactory;
+package me.bingbingpa.ch04.item17.staticfactory;
 
 public class Complex {
     private final double re;

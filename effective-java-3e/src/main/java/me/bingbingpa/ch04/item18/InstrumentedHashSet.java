@@ -1,13 +1,17 @@
-package me.bingbingpa.ch03.item18;
+package me.bingbingpa.ch04.item18;
 
 import java.util.Collection;
-import java.util.Set;
+import java.util.HashSet;
 
-public class InstrumentedSet<E> extends ForwardingSet<E> {
+public class InstrumentedHashSet<E> extends HashSet<E> {
+    // 추가된 원소의 수
     private int addCount = 0;
 
-    public InstrumentedSet(Set<E> s) {
-        super(s);
+    public InstrumentedHashSet() {
+    }
+
+    public InstrumentedHashSet(int initCap, float loadFactor) {
+        super(initCap, loadFactor);
     }
 
     @Override
@@ -25,5 +29,4 @@ public class InstrumentedSet<E> extends ForwardingSet<E> {
     public int getAddCount() {
         return addCount;
     }
-
 }

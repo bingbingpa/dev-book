@@ -1,4 +1,4 @@
-package me.bingbingpa.ch03.item16;
+package me.bingbingpa.ch04.item16;
 
 public class Point {
     private double x;

@@ -1,4 +1,4 @@
-package me.bingbingpa.ch03.item18;
+package me.bingbingpa.ch04.item18;
 
 import org.junit.jupiter.api.Test;
 
