@@ -13,3 +13,4 @@
 - [이펙티브 자바 3판](effective-java-3e/README.md)
 - [개발자가 반드시 정복해야할 객체지향과 디자인패턴](개발자가%20반드시%20정복해야할%20객체지향과%20디자인패턴/README.md)
 - [엘레강트 오브젝트](엘레강트%20오브젝트/README.md)
+- [스프링 부트와 AWS 로 혼자 구현하는 웹 서비스](freelec-springboot2-webservice/README.md)
