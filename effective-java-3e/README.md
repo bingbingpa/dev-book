@@ -717,8 +717,26 @@ Comparable<? super E>, Comparator<? super E>를 사용하는 편이 낫다.
 - 옵셔늘만으로는 상황을 처리하기에 충분한 정보를 제공할 수 없을 때만 검사 예외를 던지자.
 
 ### [아이템72] 표준 예외를 사용하라
+- Exception, RuntimeException, Throwable, Error 는 직접 재사용하지 말자.
+
+- |예외|주요 쓰임|
+  |:---|:---|
+  |IllegalArgumentException|허용하지 않는 값이 인수로 건네졌을 때|
+  |IllegalStateException|객체가 메서드를 수행하기 적절하지 않은 상태일 때|
+  |NullPointerException|null 을 허용하지 않는 메서드에 null 을 건넸을 때|
+  |IndexOutOfBoundsException|인덱스가 범위를 넘어섰을 때|
+  |ConcurrentModificationException|허용하지 않는 동시 수정이 발견됐을 때|
+  |UnsupportedOperationException|호출한 메서드를 지원하지 않을 때|
+- 인수 값이 무엇이었든 어차피 실패했을 거라면 IllegalStateException 을, 그렇지 않으면 IllegalArgumentException 을 던지자.
+
 ### [아이템73] 추상화 수준에 맞는 예외를 던지라
+- **상위 계층에서는 저수준 예외를 잡아 자신의 추상화 수준에 맞는 예외로 바꿔 던져야 한다.**
+
 ### [아이템74] 메서드가 던지는 모든 예외를 문서화하라
+- 검사 예외는 항상 따로따로 선언하고, 각 예외가 발생하는 상황을 자바독의 @throws 태그를 사용하여 정확히 문서화하자.
+- 메서드가 던질 수 있는 예외를 각각 @throws 태그로 문서화하되, 비검사 예외는 메서드 선언의 throws 목록에 넣지 말자.
+- 한 클래스에 정의된 많은 메서드가 같은 이유로 같은 예외를 던진다면 그 예외를 (각각의 메서드가 아닌) 클래스 설명에 추가할 수도 있다.
+
 ### [아이템75] 예외의 상세 메시지에 실패 관련 정보를 담으라
 ### [아이템76] 가능한 한 실패 원자적으로 만들라
 ### [아이템77] 예외를 무시하지 말라
