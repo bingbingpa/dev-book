@@ -14,4 +14,4 @@ services:
     volumes:
       - ./sql/:/docker-entrypoint-initdb.d/:ro
     ports:
-      - 13306:3306
+      - "13306:3306"
