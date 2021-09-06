@@ -37,7 +37,7 @@
 ### ch2. 테스트
 - 1장과 동일한 docker-compose.yml 파일 사용 
 - jdbc 의존성 추가 
-- JUnit5 를 사용하면사 바뀐점
+- JUnit5 를 사용하면서 바뀐점
   
   |JUnit 4|JUnit 5|
   |:---|:---|
