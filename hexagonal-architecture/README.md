@@ -45,3 +45,60 @@
 
 ## 03 코드 구성하기
 
+- 계층으로 구성하기
+  - ~~~
+    buckpal
+    ├── domain
+    │   ├── Account
+    │   ├── Activity
+    │   ├── AccountRepository
+    │   ├── AccountService
+    ├── persistence
+    │   ├── AccountRepositoryImpl
+    └── web
+        └── AccountController
+    ~~~
+  - 애플리케이션의 기능 조각(functional slice) 이나 특성(feature)을 구분 짓는 패키지 경계가 없다.
+  - 애플리케이션이 어떤 유스케이스들을 제공하는지 파악할 수 없다.
+  - 특정 기능을 찾기 위해서는 어떤 서비스가 이를 구현했는지 추측해야 하고, 해당 서비스 내의 어떤 메서드가 그에 대한 책임을 수행하는지 찾아야 한다.
+- 기능으르 구성하기
+  - ~~~
+    buckpal
+    └── account
+        ├── Account
+        ├── AccountController
+        ├── AccountRepository
+        ├── AccountRepositoryImpl
+        └── SendMoneyService
+    ~~~
+  - 패키지 경계를 package-private 접근 수준과 결합하면 각 기능 사이의 불필요한 의존성을 방지할 수 있다.
+  - 계층에 의한 패키징 방식보다 아키텍처의 가시성을 훨씬 떨어뜨린다.
+- 아키텍처적으로 표현력 있는 패키지 구조
+  - ~~~
+    buckpal
+    └── account
+        ├── adapter
+        │   ├── in
+        │   │   └── web
+        │   │       └── AccountController
+        │   ├── out
+        │   │   └── persistence
+        │   │       ├── AccountPersistenceAdapter
+        │   │       └── SpringDataAccountRepository
+        ├── domain
+        │   ├── Account
+        │   └── Activity
+        └── application
+            └── SendMoneyService
+            └── port
+                ├── in
+                │   └── SendMoneyUseCases
+                └── out
+                    ├── LoadAccountPort
+                    └── UpdateAccountStatePort
+    ~~~
+  - 육각형 아키텍처에서 구조적으로 핵심적인 요소는 엔티티, 유스케이스, 인커밍/아웃고잉 포트, 인커밍/아웃고잉 어댑터다.
+  - 구조의 각 요소들은 패키지 하나씩에 직접 매핑된다. 최상위에는 Account 와 관련된 유스케이스를 구현한 모듈임을 나타내는 account 패키지가 있다.
+  - application 패키지는 도메인 모델을 둘러싼 서비스 계층을 포함한다.
+  - adapter 패키지는 애플리케이션 계층의 인커밍 포트를 호출하는 인커핑 어댑터와 애플리케이션 계층의 아웃고잉 포트에 대한 구현을 제공하는 아웃고잉 어댑터를 포함한다.
+- **완벽한 방법은 없다. 그러나 표현력 있는 패키지 구조는 적어도 코드와 아키텍처 간의 갭을 줄일 수 있게 해준다.**
