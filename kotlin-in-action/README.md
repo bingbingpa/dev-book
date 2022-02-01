@@ -684,3 +684,9 @@
 - 코틀린 리플렉션 API: KClass, KCallable, KFunction, KProperty
   - java.lang.Class 에 해당하는 KClass 를 사용하면 클래스 안에 있는 모든 선언을 열거하고 각 선언에 접근하거나 클래스의 상위 클래스를 얻는 등의 작업이 가능하다.
   - 실행 시점에 객체의 클래스를 얻으려면 먼저 객체의 javaClass 프로퍼티를 사용해 객체의 자바 클래스를 얻어야 한다.(java.lang.Object.getClass()와 같다.)
+  - 클래스의 모든 멤버의 목록이 KCallable 인스턴스의 컬렉션이다. 
+  - 함수 참조(ex: ::foo)가 가리키는 함수를 호출하려면 KCallable.call 메소드를 호출한다.
+  - KFunction 의 invoke 메소드를 호출할 때는 인자 개수나 타입이 맞아 떨어지지 않으면 컴파일이 안 된다.
+    - **KFunction 의 인자 타입과 반환 타입을 모두 다 안다면 invoke 메소드를 호출하는 게 낫다.**
+    - call 메소드는 모든 타입의 함수에 적용할 수 있는 일반적인 메소드지만 타입 안전성을 보장해주지는 않는다.
+- [리플렉션 관련 참고(https://github.com/yole/jkid)](https://github.com/yole/jkid)
