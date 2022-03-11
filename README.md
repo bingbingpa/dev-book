@@ -25,3 +25,4 @@
 - [Kotlin in Action](kotlin-in-action/README.md)
 - [만들면서 배우는 클린 아키텍처](hexagonal-architecture/README.md)
 - [이펙티브 코틀린](effective-kotlin/README.md)
+- [코틀린 완벽 가이드](kotlin-in-depth/README.md)
