@@ -1,0 +1,12 @@
+package ch03
+
+fun renamePackage(fullName: String, newName: String): String {
+    val i = fullName.lastIndexOf('.')
+    val prefix = if (i >= 0) fullName.substring(0, i + 1) else return newName
+    return prefix + newName
+}
+
+fun main() {
+    println(renamePackage("foo.bar.old", "new")) // foo.bar.new
+    println(5 in 10..1)
+}

@@ -1,4 +1,4 @@
-package ch02
+package ch03
 
 fun swap(s: String, from: Int, to: Int): String {
     val chars = s.toCharArray() // 배열로 변환

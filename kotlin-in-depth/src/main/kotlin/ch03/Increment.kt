@@ -1,4 +1,4 @@
-package ch02
+package ch03
 
 fun increment(a: IntArray): Int {
     return ++a[0]

@@ -1,4 +1,4 @@
-package ch02
+package ch03
 
 fun change(vararg items: IntArray) {
     items[0][0] = 100

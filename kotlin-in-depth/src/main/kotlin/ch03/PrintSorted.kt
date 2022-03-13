@@ -1,4 +1,4 @@
-package ch02
+package ch03
 
 fun printSorted(vararg items: Int) {
     items.sort()
