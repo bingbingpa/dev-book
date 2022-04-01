@@ -17,4 +17,5 @@ fun main() {
     val numbers = listOf(1,2,3)
     val (odd, even) = numbers.partition { it % 2 == 1 }
     val map = mapOf(1 to "San Francisco", 2 to "Amsterdam")
+    map.mapValues { (key, value) -> println("$value!") }
 }

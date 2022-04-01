@@ -39,4 +39,6 @@ fun main() {
     println(NotEqual(3).match(1))
     println(EmptyList<Int>().match(3))
     println(NotEmptyList<Int>().match(3))
+
+    println(Equal(3).reversed().match(3))
 }
