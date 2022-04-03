@@ -14,9 +14,9 @@ class Complex(
 
 fun main() {
     val complex = Complex(1.0, 0.0)
-    println(complex.equals(1.0))
-    println(1.0.equals(complex))
+    println(complex.equals(1.0)) // true
+    println(1.0.equals(complex)) // false
 
     val list = listOf<Any>(complex)
-    list.contains(1.0)
+    println(list.contains(1.0)) // 현재 JVM 에서는 false. 하지만 컬렉션 구현에 따라서 달라질 수 있으므로 신뢰성이 떨어진다.
 }

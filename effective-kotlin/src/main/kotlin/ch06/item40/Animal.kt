@@ -10,4 +10,8 @@ fun main() {
 
     Animal() == Cat()
     Animal() === Cat()
+
+    "".equals(1)
+
+//    "" == 1
 }

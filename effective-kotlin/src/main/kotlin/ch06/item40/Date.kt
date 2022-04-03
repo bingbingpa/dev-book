@@ -30,8 +30,8 @@ fun main() {
     val o2 = Date(1992, 10, 20)
     val o3 = DateTime(Date(1992, 10, 20), 14, 45, 30)
 
-    println(o1 == o2)
-    println(o2 == o3)
-    println(o1 == o3)
+    println(o1 == o2) // true
+    println(o2 == o3) // true
+    println(o1 == o3) // false
 }
 

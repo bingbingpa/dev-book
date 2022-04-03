@@ -18,8 +18,8 @@ class Time(
 
 fun main() {
     val now = Time(isNow = true)
-    println(now == now)
-    List(100000) { now }.all { it == now }.also { println(it) }
+    println(now == now) // 때로는 true 이고, 때로는 false
+    List(100000) { now }.all { it == now }.also { println(it) } // 대부분 false
 
     val now1 = Time(isNow = true)
     val now2 = Time(isNow = true)

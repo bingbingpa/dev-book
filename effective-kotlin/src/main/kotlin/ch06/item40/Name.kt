@@ -7,10 +7,10 @@ fun main() {
     val name2 = Name("Marcin")
     val name1Ref = name1
 
-    println(name1 == name1)
-    println(name1 == name2)
-    println(name1 == name1Ref)
-    println(name1 === name1)
-    println(name1 === name2)
-    println(name1 === name1Ref)
+    println(name1 == name1) // true
+    println(name1 == name2) // false
+    println(name1 == name1Ref) // true
+    println(name1 === name1) // true
+    println(name1 === name2) // false
+    println(name1 === name1Ref) // true
 }
