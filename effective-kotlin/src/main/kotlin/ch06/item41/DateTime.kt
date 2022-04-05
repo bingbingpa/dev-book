@@ -23,6 +23,6 @@ class DateTime(
 }
 
 inline fun hashCodeOf(vararg values: Any?) =
-    values.fold(0) {acc, value ->
+    values.fold(0) { acc, value ->
         (acc * 31) + value.hashCode()
     }

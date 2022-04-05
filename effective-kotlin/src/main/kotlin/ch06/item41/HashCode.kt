@@ -31,23 +31,23 @@ class Terrible(val name: String) {
 
 fun main() {
     val properSet = List(10000) { Proper("$it") }.toSet()
-    println(Proper.equalsCounter)
+    println(Proper.equalsCounter) // 0
     val terribleSet = List(10000) { Terrible("$it") }.toSet()
-    println(Terrible.equalsCounter)
+    println(Terrible.equalsCounter) // 50116021
 
     Proper.equalsCounter = 0
-    println(Proper("9999") in properSet)
-    println(Proper.equalsCounter)
+    println(Proper("9999") in properSet) // true
+    println(Proper.equalsCounter) // 1
 
     Proper.equalsCounter = 0
-    println(Proper("A") in properSet)
-    println(Proper.equalsCounter)
+    println(Proper("A") in properSet) // false
+    println(Proper.equalsCounter) // 0
 
     Terrible.equalsCounter = 0
-    println(Terrible("9999") in terribleSet)
-    println(Terrible.equalsCounter)
+    println(Terrible("9999") in terribleSet) // true
+    println(Terrible.equalsCounter) // 4802
 
     Terrible.equalsCounter = 0
-    println(Terrible("A") in terribleSet)
-    println(Terrible.equalsCounter)
+    println(Terrible("A") in terribleSet) // false
+    println(Terrible.equalsCounter) // 10001
 }
