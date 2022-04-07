@@ -1,9 +1,9 @@
 package ch06.item44
 
-class PhoneBookCorrect
-
-fun String.isPhoneNumber() =
-    length == 7 && all { it.isDigit() }
+class PhoneBookCorrect {
+    fun String.isPhoneNumber() =
+        length == 7 && all { it.isDigit() }
+}
 
 class A {
     val a = 10
