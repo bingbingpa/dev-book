@@ -1,10 +1,10 @@
 package ch06.item39
 
-import ch06.item39.ValueMatcher.*
+//import ch06.item39.ValueMatcher.*
 
 sealed class ValueMatcher<T> {
     abstract fun match(value: T): Boolean
-
+}
     class Equal<T>(val value: T) : ValueMatcher<T>() {
         override fun match(value: T): Boolean =
             value == this.value
@@ -24,7 +24,7 @@ sealed class ValueMatcher<T> {
         override fun match(value: T): Boolean =
             value is List<*> && value.isNotEmpty()
     }
-}
+//}
 
 fun <T> ValueMatcher<T>.reversed() =
     when(this) {
