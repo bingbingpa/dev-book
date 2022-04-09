@@ -1,9 +1,12 @@
 package ch06.item41.noHashCode
 
-
+//data class FullName (
+//    val name: String,
+//    val surname: String
+//)
 class FullName(
-    var name: String,
-    var surname: String
+    val name: String,
+    val surname: String
 ) {
     override fun equals(other: Any?): Boolean =
         other is FullName
