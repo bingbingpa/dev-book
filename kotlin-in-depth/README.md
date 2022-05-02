@@ -526,3 +526,82 @@
     - KClass 타입은 자바 언어의 Class 타입에 해당하는 코틀린 클래스다. 클래스 이름 뒤에 ::class 붙여서 클래스 리터럴을 만든다.
   - 위에 나열한 타입들로 이뤄진 배열
 - 애너테이션 파라미터로 vararg 대신 명시적인 배열 타입을 사용할 수도 있다.
+- 사용 지점 대상 애너테이션
+  - property: 프로퍼티 자체를 대상으로 한다.
+  - field: 뒷받침하는 필드를 대상으로 한다.
+  - get: 프로퍼티 게터를 대상으로 한다.
+  - set: 프로퍼티 세터를 대상으로 한다.
+  - param: 생성자 파라미터를 대상으로 한다(val/var 가 붙은 파라미터만 대상으로 삼을 수 있다).
+  - setparam: 프로퍼티 세터의 파라미터를 대상으로 한다(가변 프로퍼티에만 사용할 수 있다).
+  - delegate: 위임 객체를 저장하는 필드를 대상으로 한다(위임 프로퍼티에만 사용할 수 있다).
+- 내장 애너테이션
+  - @Retention: 애너테이션이 저장되고 유지되는 방식을 제어한다.
+    - SOURCE: 컴파일 시점에만 존재하며 컴파일러의 바이너리 출력(JVM 의 경우 바이트코드가 저장된 클래스 파일)에는 저장되지 않는다.
+    - BINARY: 컴파일러의 바이너리 출력에 저장되지만, 런타임에 리플렉션 API 로 관찰할 수는 없다.
+    - RUNTIME: 컴파일러의 바이너리 출력에 저장되며 런타임에 리플렉션 API 를 통해 관찰할 수도 있다.
+    - 디폴트로 RUNTIME 으로 유지 시점이 정의된다.
+    - 하지만 현재는 식에 대해 붙은 애너테이션의 경우 런타임까지 유지되지 못한다.
+  - 자바와 코틀린의 디폴트 유지 시점 차이
+    - 자바에서는 디폴트가 RetentionPolicy.CLASS(코틀린의 AnnotationRetention.BINARY)이며, 이 말은 명시적으로 RUNTIME 으로 지정하지 않으면 자바 애너테이션을 리플렉션에서 관찰할 수 없다는 뜻이다.
+  - @Target: 애너테이션을 어떤 언어 요소에 붙일 수 있는지 지정한다.
+    - CLASS: 클래스, 인터페이스, 객체에 붙일 수 있다(애너테이션 클래스도 포함).
+    - ANNOTATION_CLASS: 애너테이션 클래스에 붙일 수 있다.
+    - TYPEALIAS: 타입 별명 정의에 붙일 수 있다.
+    - PROPERTY: 주생성자에 정의된 val/var 프로퍼티를 포함해, 프로퍼티에 붙일 수 있다(지역 변수에는 붙일 수 없다).
+    - FIELD: 프로퍼티를 뒷받침하는 필드에 붙일 수 있다.
+    - LOCAL_VARIABLE: 지역 변수에 붙일 수 있다(파라미터는 제외).
+    - VALUE_PARAMETER: 생성자, 함수, 프로퍼티 세터의 파라미터에 붙일 수 있다.
+    - CONSTRUCTOR: 주생성자나 부생성자에 붙일 수 있다.
+    - FUNCTION: 람다나 익명 함수를 포함해, 함수에 붙일 수 있다(하지만 생성자나 프로퍼티 접근자에는 붙일 수 없다).
+    - PROPERTY_GETTER/PROPERTY_SETTER: 프로퍼티 게터/프로퍼티 세터에 붙일 수 있다.
+    - FILE: 파일에 붙일 수 있다.
+    - TYPE: 타입 지정에 붙일 수 있다. 변수의 타입이나 함수 파라미터 타입, 반환 타입 등을 포함한다.
+    - EXPRESSION: 식에 붙일 수 있다.
+    - @Target 을 지정하지 않으면 타입 별명, 타입 파라미터, 타입 지정, 식, 파일을 제외한 언어 요소에 애너테이션을 적용할 수 있다.
+    - 자바와 코틀린의 차이점
+      - 코틀린의 AnnotationTarget.TYPE 은 타입 지정(자바의 ElementType.TYPE_USAGE 에 해당)을 뜻하지만, 자바의 ElementType.TYPE 은 실제 클래스나 인터페이스 선언(코틀린의 AnnotationTarget.CLASS 에 해당)을 뜻한다.
+
+### 10.2 리플렉션
+
+- 리플렉션 API 는 클래스, 함수, 프로퍼티의 런타임 표현에 접근할 수 있게 해주는 타입, 함수, 프로퍼티 모음이다.
+- 모든 리플렉션 타입은 KAnnotatedElement 의 자손이다.
+- KClass API
+  - 대상 클래스에 어떤 변경자가 붙어 있는지를 알아내는 API
+    - isAbstract, isCompanion, isData, isFinal, isOpen, isSealed
+  - visibility 프로퍼티
+    - 가시성 수준을 돌려준다(PUBLIC, PROTECTED, INTERNAL, PRIVATE)
+    - 코틀린 소스코드에서 가시성을 표현할 수 없다면 visibility 값이 null 이다.
+  - simpleName 프로퍼티: 소스코드에서 사용되는 간단한 이름을 반환한다. 클래스 이름이 없다면 결과는 null 이다.
+  - qualifiedName 프로퍼티: 클래스의 전체 이름 조회. 전체 이름에는 클래스가 포함된 패키지의 전체 경로가 들어간다.
+  - isInstance() 함수: 주어진 객체가 이 함수의 수신 객체가 표현하는 클래스의 인스턴스인지 알려준다.
+  - 멤버 선언에 접근하는 API
+    - constructors: 주생성자와 부생성자들을 KFunction 타입의 인스턴스로 돌려준다.
+    - members: KCallable 인스턴스로 표현되는 멤버 함수와 프로퍼티 표현의 컬렉션을 돌려준다. 이 컬렉션 안에는 상위 타입에서 상속한 모든 멤버도 함께 포함된다.
+    - nestedClasses: 내포된 클래스와 객체들로 이뤄진 컬렉션이다. 동반 객체도 포함된다.
+    - typeParameters: KTypeParameter 에 의해 표현되는 타입 파라미터로 이뤄진 리스트다(대상 클래스가 제네릭 타입이 아닌 경우 이 리스트는 빈 리스트다)
+  - KClass 가 객체 선언을 표현하는 경우 constructors 프로퍼티는 항상 빈 컬렉션을 반환한다. 
+    - 실제 인스턴스를 얻고 싶으면 objectInstance 프로퍼티를 사용해야 한다.
+    - KClass 인스턴스가 객체를 표현하지 않으면 objectInstance 프로퍼티도 null 이다.
+  - supertype 프로퍼티는 클래스가 직접 상속한 상위 타입만 돌려준다.
+- 호출 가능(callable)
+  - 호출 가능요소라는 개념은 어떤 결과를 얻기 위해 호출할 수 있는 함수나 프로퍼티를 함께 묶어준다.
+  - KCallable 이 제공하는 멤버
+    - KClass 와 마찬가지로 어떤 변경자가 붙어있는지 알아 낼 수 있는 프로퍼티들이 존재한다.
+      - isAbstract, isFinal, isOpen, isSuspend, visibility
+    - 프로퍼티나 함수의 시그니처를 표현하는 프로퍼티가 속한 그룹
+      - val name: String
+      - val typeParameters: List\<KTypeParameter>
+      - val parameters: List\<KParameter>
+      - val returnType: KType
+    - KParameter 인터페이스는 멤버 및 확장 선언의 수신 객체나 함수/생성자의 파라미터에 대한 정보를 포함한다.
+      - index, isOptional, isVararg, name, type, kind
+      - isOptional 프로퍼티는 파라미터에 디폴트 값이 있는지 여부를 돌려준다. 하지만 디폴트 값 자체를 알 수는 없다.
+      - kind 프로퍼티는 KParameter 인스턴스가 일반적인 값에 해당하는지, 아니면 디스패치나 확장의 수신 객체인지를 알려준다.
+        - INSTANCE: 멤버 선언의 디스패치 수신 객체
+        - EXTENSION_RECEIVER: 확장 선언의 확장 수신 객체
+        - VALUE: 일반적인 값
+  - KCallable 에는 이 호출 가능 요소가 표현하는 호출 가능한 선언을 동적으로 호출할 수 있게 해주는 call() 멤버 함수가 들어있다.
+    - 함수로부터 만들어진 호출 가능 요소인 경우 call() 은 함수를 호출한다.
+    - 호출 가능 요소가 프로퍼티게터라면 게터가 호출된다.
+  - KFunction: 함수나 생성자를 표현한다. 함수에 적용 가능한 변경자 검사를 위한 프로퍼티들을 가지고 있다.
+    - isInfix, isInline, isOperator, isSuspend
