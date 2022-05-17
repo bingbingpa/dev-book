@@ -181,7 +181,7 @@
     - 컨슈머의 고유한 식별자
     - 만약 설정한다면 static 멤버로 간주되어, 불필요한 리밸런싱을 하지 않는다.
   - isolation.level
-    - 트랜잭션 컨슈머에서 사용되는 옵션으로, read_uncommitted 는 기본값으로 모든 메시지를 읽고, read_committed 는 트랜젹신이 완료된 메시지만 읽는다.
+    - 트랜잭션 컨슈머에서 사용되는 옵션으로, read_uncommitted 는 기본값으로 모든 메시지를 읽고, read_committed 는 트랜잭션이 완료된 메시지만 읽는다.
   - max.poll.records
     - 한 번의 poll() 요청으로 가져오는 최대 메시지 수
   - partition.assignment.strategy
