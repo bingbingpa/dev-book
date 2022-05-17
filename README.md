@@ -28,3 +28,4 @@
 - [코틀린 완벽 가이드](kotlin-in-depth/README.md)
 - [성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)
 - [엘라스틱 스택 개발부터 운영까지](elasticstack/README.md)
+- [실전 카프카 개발부터 운영까지](kafka-dev-to-operation/README.md)
