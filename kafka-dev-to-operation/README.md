@@ -2,4 +2,6 @@
 - *고승범 저 | 책만*
 - [예제 소스 저장소](https://github.com/onlybooks/kafka2)
 
-- [내용 정리](https://opensesame.notion.site/513cda4d027f40aaaad53b5a4572cfb4)
+- [3장 카프카 기본 개념과 구조](./ch03.md)
+- [4장 카프카의 내부 동작 원리와 구현](./ch04.md)
+- [5장 프로듀서의 내부 동작 원리와 구현](./ch05.md)
