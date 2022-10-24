@@ -29,7 +29,8 @@
 - [실전 카프카 개발부터 운영까지](kafka-dev-to-operation/README.md)
 - [단위 테스트](unit-test/README.md)
 - [프로그래머의 뇌](programmer-brain/README.md)
-- [Real MySQL 8.0](real-mysql/README.md)
 - [시작하세요! 도커 쿠버네티스](start-docker-kubernetes/README.md)
-- [성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)
-- [엘라스틱 스택 개발부터 운영까지](elasticstack/README.md)
+- [함께 자라기](함께%20자라기/README.md)
+- *[Real MySQL 8.0](real-mysql/README.md)*
+- *[성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)*
+- *[엘라스틱 스택 개발부터 운영까지](elasticstack/README.md)*
