@@ -1,5 +1,6 @@
 package ch6;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,7 +8,6 @@ import static ch6.Collections.sorted;
 import static ch6.Other.SOME_COMPLICATED_RESULT;
 import static ch6.Other.routesFor;
 import static ch6.Routes.getDepartsFrom;
-import static java.util.Comparator.comparing;
 
 public class SufferingJava {
 
@@ -24,7 +24,7 @@ public class SufferingJava {
         var actualLimit = Math.min(journeys.size(), limit);
         return sorted(
                 journeys,
-                comparing(Journey::getDuration).reversed()
+                Comparator.comparing(Journey::getDuration).reversed()
         ).subList(0, actualLimit);
 //        journeys.sort(comparing(Journey::getDuration).reversed()); // <1>
 //        var actualLimit = Math.min(journeys.size(), limit);
