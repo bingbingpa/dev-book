@@ -6,3 +6,6 @@
 
 ### [CHAPTER 3 자바 클래스에서 코틀린 클래스로](docs/CHAPTER3.md)
 ### [CHAPTER 4 옵셔널에서 널이 될 수 있는 타입으로](docs/CHAPTER4.md)
+### [CHAPTER 5 빈에서 값으로](docs/CHAPTER5.md)
+### [CHAPTER 6 자바에서 코틀린 컬렉션으로](docs/CHAPTER6.md)
+### [CHAPTER 7 동작에서 계산으로](docs/CHAPTER7.md)
