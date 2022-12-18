@@ -9,3 +9,4 @@
 ### [CHAPTER 5 빈에서 값으로](docs/CHAPTER5.md)
 ### [CHAPTER 6 자바에서 코틀린 컬렉션으로](docs/CHAPTER6.md)
 ### [CHAPTER 7 동작에서 계산으로](docs/CHAPTER7.md)
+### [CHAPTER 8 정적 메서드에서 최상위 함수로](docs/CHAPTER8.md)
