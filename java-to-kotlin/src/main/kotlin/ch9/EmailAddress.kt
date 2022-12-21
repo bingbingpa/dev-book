@@ -8,12 +8,19 @@ data class EmailAddress(
     override fun toString() = "$localPart@$domain"
 
     companion object {
-        @JvmStatic
-        fun parse(value: String): EmailAddress {
-            return value.splitAroundLast('@').let { (leftPart, rightPart) ->
-                EmailAddress(leftPart, rightPart)
-            }
+
+        fun parse(str: String) = str.split('@').also { list ->
+            require(list.size == 2 && list.all { it.isNotEmpty() }) { "error" }
+        }.let { (id, domain) ->
+            EmailAddress(id, domain)
         }
+
+//        @JvmStatic
+//        fun parse(value: String): EmailAddress {
+//            return value.splitAroundLast('@').let { (leftPart, rightPart) ->
+//                EmailAddress(leftPart, rightPart)
+//            }
+//        }
     }
 }
 
