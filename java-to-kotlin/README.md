@@ -11,3 +11,6 @@
 ### [CHAPTER 7 동작에서 계산으로](docs/CHAPTER7.md)
 ### [CHAPTER 8 정적 메서드에서 최상위 함수로](docs/CHAPTER8.md)
 ### [CHAPTER 9 다중식 함수에서 단일식 함수로](docs/CHAPTER9.md)
+### [CHAPTER 10 함수에서 확장 함수로](docs/CHAPTER10.md)
+### [CHAPTER 11 메서드에서 프로퍼티로](docs/CHAPTER11.md)
+### [CHAPTER 12 함수에서 연산자로](docs/CHAPTER12.md)
