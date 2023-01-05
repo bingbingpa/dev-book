@@ -8,7 +8,12 @@
 
 ## PART II 문화
 - [CHAPTER 2 팀워크 이끌어내기](ch02.md)
-- [CHAPTER3 지식 공유](ch03.md)
+- [CHAPTER 3 지식 공유](ch03.md)
+- [CHAPTER 4 공정 사회를 위한 엔지니어링](ch04.md)
+- [CHAPTER 5 팀 이끌기](ch05.md)
+- [CHAPTER 6 성장하는 조직 이끌기](ch06.md)
+- [CHAPTER 7 엔지니어링 생산성 측정하기](ch07.md)
+- [CHAPTER 8 스타일 가이드와 규칙](ch08.md)
 
 ## PART III 프로세스
 
