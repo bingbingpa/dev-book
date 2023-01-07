@@ -14,6 +14,12 @@
 - [CHAPTER 6 성장하는 조직 이끌기](ch06.md)
 - [CHAPTER 7 엔지니어링 생산성 측정하기](ch07.md)
 - [CHAPTER 8 스타일 가이드와 규칙](ch08.md)
+- [CHAPTER 9 코드 리뷰](ch09.md)
+- [CHAPTER 10 문서자료](ch10.md)
+- [CHAPTER 11 테스트 개요](ch11.md)
+- [CHAPTER 12 단위 테스트](ch12.md)
+- [CHAPTER 13 테스트 대역](ch13.md)
+- [CHAPTER 14 더 큰 테스트](ch14.md)
 
 ## PART III 프로세스
 
