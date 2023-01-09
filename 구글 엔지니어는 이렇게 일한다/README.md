@@ -20,6 +20,7 @@
 - [CHAPTER 12 단위 테스트](ch12.md)
 - [CHAPTER 13 테스트 대역](ch13.md)
 - [CHAPTER 14 더 큰 테스트](ch14.md)
+- [CHAPTER 15 폐기](ch15.md)
 
 ## PART III 프로세스
 
