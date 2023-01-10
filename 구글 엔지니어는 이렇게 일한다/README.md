@@ -13,6 +13,8 @@
 - [CHAPTER 5 팀 이끌기](ch05.md)
 - [CHAPTER 6 성장하는 조직 이끌기](ch06.md)
 - [CHAPTER 7 엔지니어링 생산성 측정하기](ch07.md)
+
+## PART III 프로세스
 - [CHAPTER 8 스타일 가이드와 규칙](ch08.md)
 - [CHAPTER 9 코드 리뷰](ch09.md)
 - [CHAPTER 10 문서자료](ch10.md)
@@ -22,6 +24,5 @@
 - [CHAPTER 14 더 큰 테스트](ch14.md)
 - [CHAPTER 15 폐기](ch15.md)
 
-## PART III 프로세스
-
 ## PART IV 도구
+- [CHAPTER 16 버전 관리와 브랜치 관리](ch16.md)
