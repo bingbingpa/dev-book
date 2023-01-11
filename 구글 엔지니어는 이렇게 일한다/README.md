@@ -26,3 +26,4 @@
 
 ## PART IV 도구
 - [CHAPTER 16 버전 관리와 브랜치 관리](ch16.md)
+- [CHAPTER 17 Code Search](ch17.md)
