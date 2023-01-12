@@ -27,3 +27,5 @@
 ## PART IV 도구
 - [CHAPTER 16 버전 관리와 브랜치 관리](ch16.md)
 - [CHAPTER 17 Code Search](ch17.md)
+- [CHAPTER 18 빌드 시스템과 빌드 철학](ch18.md)
+- [CHAPTER 19 구글의 코드 리뷰 도구](ch19.md)
