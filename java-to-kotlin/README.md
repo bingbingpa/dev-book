@@ -15,3 +15,4 @@
 ### [CHAPTER 11 메서드에서 프로퍼티로](docs/CHAPTER11.md)
 ### [CHAPTER 12 함수에서 연산자로](docs/CHAPTER12.md)
 ### [CHAPTER 13 스트림에서 이터러블이나 시퀀스로](docs/CHAPTER13.md)
+### [CHAPTER 14 누적시키는 객체에서 변환으로](docs/CHAPTER14.md)
