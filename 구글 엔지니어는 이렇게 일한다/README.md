@@ -29,3 +29,5 @@
 - [CHAPTER 17 Code Search](ch17.md)
 - [CHAPTER 18 빌드 시스템과 빌드 철학](ch18.md)
 - [CHAPTER 19 구글의 코드 리뷰 도구](ch19.md)
+- [CHAPTER 20 정적 분석](ch20.md)
+- [CHAPTER 21 의존성 관리](ch21.md)
