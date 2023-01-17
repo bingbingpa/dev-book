@@ -31,3 +31,6 @@
 - [CHAPTER 19 구글의 코드 리뷰 도구](ch19.md)
 - [CHAPTER 20 정적 분석](ch20.md)
 - [CHAPTER 21 의존성 관리](ch21.md)
+- [CHAPTER 22 대규모 변경](ch22.md)
+- [CHAPTER 23 지속적 통합](ch23.md)
+- [CHAPTER 24 지속적 배포](ch24.md)
