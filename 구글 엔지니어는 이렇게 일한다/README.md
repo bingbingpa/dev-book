@@ -34,3 +34,4 @@
 - [CHAPTER 22 대규모 변경](ch22.md)
 - [CHAPTER 23 지속적 통합](ch23.md)
 - [CHAPTER 24 지속적 배포](ch24.md)
+- [CHAPTER 25 서비스형 컴퓨트](ch25.md)
