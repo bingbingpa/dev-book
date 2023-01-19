@@ -17,3 +17,4 @@
 ### [CHAPTER 13 스트림에서 이터러블이나 시퀀스로](docs/CHAPTER13.md)
 ### [CHAPTER 14 누적시키는 객체에서 변환으로](docs/CHAPTER14.md)
 ### [CHAPTER 15 캡슐화한 컬렉션에서 타입 별명으로](docs/CHAPTER15.md)
+### [CHAPTER 16 인터페이스에서 함수로](docs/CHAPTER16.md)
