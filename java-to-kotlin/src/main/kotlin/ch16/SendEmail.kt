@@ -4,7 +4,11 @@ interface ISendEmail {
     fun send(email: Email)
 }
 
-class EmailSender : ISendEmail {
+class EmailSender : ISendEmail, (Email) -> Unit {
+
+    override fun invoke(p1: Email) {
+        TODO("Not yet implemented")
+    }
     override fun send(email: Email) {
         TODO("Not yet implemented")
     }
