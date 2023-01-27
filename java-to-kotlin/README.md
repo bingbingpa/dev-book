@@ -18,3 +18,5 @@
 ### [CHAPTER 14 누적시키는 객체에서 변환으로](docs/CHAPTER14.md)
 ### [CHAPTER 15 캡슐화한 컬렉션에서 타입 별명으로](docs/CHAPTER15.md)
 ### [CHAPTER 16 인터페이스에서 함수로](docs/CHAPTER16.md)
+### [CHAPTER 17 목에서 맵으로](docs/CHAPTER17.md)
+### [CHAPTER 18 열린 클래스에서 봉인된 클래스로](docs/CHAPTER18.md)
