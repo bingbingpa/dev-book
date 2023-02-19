@@ -23,3 +23,5 @@
 ### [CHAPTER 19 예외 던지기에서 값 반환으로](docs/CHAPTER19.md)
 ### [CHAPTER 20 I/O 수행에서 데이터 전달로](docs/CHAPTER20.md)
 ### [CHAPTER 21 예외에서 값으로](docs/CHAPTER21.md)
+### [CHAPTER 22 클래스에서 함수로](docs/CHAPTER22.md)
+### [CHAPTER 23 여행은 계속된다](docs/CHAPTER23.md)
