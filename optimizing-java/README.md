@@ -4,3 +4,4 @@
 <br>
 
 - [CHAPTER 1 성능과 최적화](ch01.md)
+- [CHAPTER 2](ch02.md)
