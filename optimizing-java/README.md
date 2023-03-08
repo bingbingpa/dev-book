@@ -4,4 +4,4 @@
 <br>
 
 - [CHAPTER 1 성능과 최적화](ch01.md)
-- [CHAPTER 2](ch02.md)
+- [CHAPTER 2 JVM 이야기](ch02.md)
