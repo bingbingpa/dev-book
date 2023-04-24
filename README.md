@@ -34,7 +34,7 @@
 ## [2023]
 - [구글 엔지니어는 이렇게 일한다](구글%20엔지니어는%20이렇게%20일한다/README.md)
 - [자바에서 코틀린으로](java-to-kotlin/README.md)
-- [자바 최적화](optimizing-java/README.md)
+- ~~[자바 최적화](optimizing-java/README.md)~~
 - *[성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)*
 - *[토비의 스프링](toby-spring/README.md)*
 - *[Real MySQL 8.0](real-mysql/README.md)*
