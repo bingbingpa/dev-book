@@ -37,8 +37,9 @@
 - ~~[자바 최적화](optimizing-java/README.md)~~
 
 ## [2024]
-- [스프링으로 시작하는 리액티브 프로그래밍](spring-reactive/README.md)
 - [육각형 개발자](육각형%20개발자/README.md)
+- [오늘, 또 일을 미루고 말았다](오늘%20또%20일을%20미루고%20말았다/README.md)
+- [스프링으로 시작하는 리액티브 프로그래밍](spring-reactive/README.md)
 - *[성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)*
 - *[토비의 스프링](toby-spring/README.md)*
 - *[Real MySQL 8.0](real-mysql/README.md)*
