@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.jayway.jsonpath:json-path:2.7.0")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

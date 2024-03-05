@@ -54,3 +54,5 @@ fun logger(loggerName: String): Logger {
 fun lazyLogger(loggerName: String): Lazy<Logger> {
     return lazy { logger(loggerName) }
 }
+
+val logger by lazyLogger("spring-reactive")
