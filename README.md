@@ -39,8 +39,5 @@
 ## [2024]
 - [육각형 개발자](육각형%20개발자/README.md)
 - [오늘, 또 일을 미루고 말았다](오늘%20또%20일을%20미루고%20말았다/README.md)
+- [OpenAPI 와 스웨거를 활용한 실전 API 설계](OpenAPI%20와%20스웨거를%20활용한%20실전%20API%20설계/README.md)
 - [스프링으로 시작하는 리액티브 프로그래밍](spring-reactive/README.md)
-- *[성공과 실패를 결정하는 1%의 네트워크 원리](성공과%20실패를%20결정하는%201%25의%20네트워크%20원리/README.md)*
-- *[토비의 스프링](toby-spring/README.md)*
-- *[Real MySQL 8.0](real-mysql/README.md)*
-- *[엘라스틱 스택 개발부터 운영까지](elasticstack/README.md)*
