@@ -44,3 +44,33 @@
   - json 의 구조가 {data:[리스트]} 로 되어있음 - 작은 json 을 SSE 로 쏘기
   - 디비 질의가 큰 레코드셋을 반환하게 함
   - 여러 파일의 업로드가 다 끝나면 처리함 - 하나 올 때마다 처리
+
+## 2주차(2024.10.24)
+
+### 웹플럭스의 응답
+
+- Mono\<X> - 하나 X 를 응답으로 보냄
+- Flux\<X> - [SSE](https://medium.com/deliveryherotechhub/what-is-server-sent-events-sse-and-how-to-implement-it-904938bffd73) 로 여러 개의 X 를 응답으로 보냄
+- Mono\<Void> - 스프링이 자동으로 응답을 보내지 않음. 왜 쓸까?
+  - 1, 2 번은 스프링이 일반적인 경우에 대해 기본처리를 해 줌
+  - 헌데 보다 정밀한 청크처리나 SSE 가 아닌 형식의 스트림을 쓰고 싶다면 스트림을 통제해야 함
+  - SSE 를 왜 안쓸까?
+    - 보통 브라우저에서 SSE 를 구현하는 방법은 EventSource 라는 객체를 사용하는 것임 
+    - 근데 이 브라우저 객체를 사용해 통신하면 요청에 헤더값을 넣을 수 없음
+    - fetch 를 복잡하게 커스터마이즈 해야함
+    - 이럴거면 굳이 SSE 스펙을 지킬 이유가 있나?
+
+### Mono\<Void> 사용하기
+
+- ServerHttpRequest 의 body 가 Flux 로 들어옴
+- ServerHttpResponse 의 [writeAndFlushWith](https://developer.chrome.com/docs/capabilities/web-apis/fetch-streaming-requests?hl=ko) 를 사용하면 응답을 Flux 로 할 수 있음
+- 가장 raw 한 레벨의 http 통신은 전부 DataBuffer(byteArray) 수준으로 주고 받음
+- http1.1 이냐 http2 냐 결정하기
+  - 1.1 은 심플렉스 - 모든 request 공정이 끝나야 response 가 가능
+  - 2는 멀티플렉스 - request 스트림과 response 스트림이 동시에 가능
+- [코드1](https://gist.github.com/hikaMaeng/432e48ab2d37e638bfb468e50493c466)
+- [코드2](https://gist.github.com/hikaMaeng/d92f27d67d109c746740850495ae849d)
+
+### 이것저것
+
+- flatMap, concat, merge, sink 는 확실히 알아두자!
