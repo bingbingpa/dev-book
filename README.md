@@ -42,3 +42,4 @@
 - [OpenAPI 와 스웨거를 활용한 실전 API 설계](OpenAPI%20와%20스웨거를%20활용한%20실전%20API%20설계/README.md)
 - [도메인 주도 설계 첫걸음](도메인%20주도%20설계%20첫걸음/README.md)
 - [스프링으로 시작하는 리액티브 프로그래밍](spring-reactive/README.md)
+- [자바 퍼시스턴스 프로그래밍 완벽가이드](java-persistence-with-spring-data-and-hibernate/README.md)
