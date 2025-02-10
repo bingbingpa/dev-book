@@ -32,14 +32,20 @@
 - [함께 자라기](함께%20자라기/README.md)
 
 ## [2023]
+
 - [구글 엔지니어는 이렇게 일한다](구글%20엔지니어는%20이렇게%20일한다/README.md)
 - [자바에서 코틀린으로](java-to-kotlin/README.md)
 - ~~[자바 최적화](optimizing-java/README.md)~~
 
 ## [2024]
+
 - [육각형 개발자](육각형%20개발자/README.md)
 - [오늘, 또 일을 미루고 말았다](오늘%20또%20일을%20미루고%20말았다/README.md)
 - [OpenAPI 와 스웨거를 활용한 실전 API 설계](OpenAPI%20와%20스웨거를%20활용한%20실전%20API%20설계/README.md)
 - [도메인 주도 설계 첫걸음](도메인%20주도%20설계%20첫걸음/README.md)
 - [스프링으로 시작하는 리액티브 프로그래밍](spring-reactive/README.md)
+
+## [2025]
+
 - [자바 퍼시스턴스 프로그래밍 완벽가이드](java-persistence-with-spring-data-and-hibernate/README.md)
+- [켄트 벡의 Tidy First](tidy-first/README.md)
