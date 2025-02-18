@@ -47,5 +47,6 @@
 
 ## [2025]
 
-- [자바 퍼시스턴스 프로그래밍 완벽가이드](java-persistence-with-spring-data-and-hibernate/README.md)
 - [켄트 벡의 Tidy First](tidy-first/README.md)
+- [테스트 주도 개발 시작하기](tdd-start/README.md)
+- [자바 퍼시스턴스 프로그래밍 완벽가이드](java-persistence-with-spring-data-and-hibernate/README.md)
